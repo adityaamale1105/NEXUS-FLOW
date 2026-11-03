@@ -122,9 +122,21 @@
     });
   });
 
-  // IntersectionObserver for Scroll-Spy Active Nav Highlighting
+  // IntersectionObserver for Scroll-Spy Active Nav Highlighting & URL Hash Updating
   const sections = document.querySelectorAll(".page-section");
   const navLinks = document.querySelectorAll(".nav-link[data-section]");
+
+  const sectionTitles = {
+    hero: "Nexus-Flow — Autonomous AI Procurement",
+    "how-it-works": "How It Works — Nexus-Flow",
+    terminal: "Thought Terminal — Nexus-Flow",
+    bom: "Bill of Materials — Nexus-Flow",
+    intelligence: "Deterministic Compatibility — Nexus-Flow",
+    suppliers: "Supplier Intelligence — Nexus-Flow",
+    checkout: "PayPal Checkout — Nexus-Flow",
+    "control-tower": "Merchant Control Tower — Nexus-Flow",
+    history: "Procurement Plan Archive — Nexus-Flow"
+  };
 
   if ("IntersectionObserver" in window && sections.length > 0) {
     const sectionObserver = new IntersectionObserver(
@@ -139,12 +151,22 @@
                 link.classList.remove("active");
               }
             });
+
+            // Dynamically update the browser URL hash as the user scrolls into each page section
+            if (history.replaceState && window.location.hash !== `#${sectionId}`) {
+              history.replaceState(null, null, `#${sectionId}`);
+            }
+
+            // Dynamically update document title to reflect active page section
+            if (sectionTitles[sectionId]) {
+              document.title = sectionTitles[sectionId];
+            }
           }
         });
       },
       {
         root: null,
-        rootMargin: "-25% 0px -65% 0px",
+        rootMargin: "-25% 0px -55% 0px",
         threshold: 0
       }
     );

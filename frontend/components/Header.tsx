@@ -9,12 +9,15 @@ export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "Procurement Engine", href: "/" },
-    { name: "Procurement History", href: "/#view-history" },
-    { name: "Control Tower", href: "/control-tower" },
+    { name: "Procure", href: "/#hero" },
+    { name: "How It Works", href: "/#how-it-works" },
+    { name: "Thought Terminal", href: "/#terminal" },
+    { name: "BOM Workspace", href: "/#bom" },
+    { name: "Compatibility", href: "/#intelligence" },
+    { name: "Suppliers", href: "/#suppliers" },
+    { name: "Control Tower", href: "/#control-tower" },
+    { name: "History", href: "/#history" },
     { name: "API Docs", href: "/api/docs", external: true },
-    { name: "Privacy", href: "/privacy" },
-    { name: "Terms", href: "/terms" },
   ];
 
   return (
