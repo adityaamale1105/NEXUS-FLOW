@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Nexus-Flow — Autonomous AI Procurement & Financial Orchestration</title>
+  <meta name="description" content="AI-powered autonomous procurement platform converting natural-language purchasing requirements into validated, optimized, multi-vendor, payment-ready procurement plans. Built for the PayPal AI Hackathon 2026.">
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Sticky Minimal Navigation Bar -->
+  <header id="main-header">
+    <div class="app-container">
+      <div class="header-content">
+        <a href="#hero" class="brand-badge">
+          <div class="brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <div>
+            <div class="brand-title">
+              NEXUS-FLOW
+              <span class="brand-pill">2026</span>
+            </div>
+            <div class="brand-subtitle">
+              Autonomous Procurement Intelligence
+            </div>
+          </div>
+        </a>
+
+        <!-- Desktop Continuous Anchor Navigation -->
+        <nav class="nav-links" id="desktop-nav">
+          <a href="#hero" class="nav-link active" data-section="hero">Procure</a>
+          <a href="#how-it-works" class="nav-link" data-section="how-it-works">How It Works</a>
+          <a href="#terminal" class="nav-link" data-section="terminal">Thought Terminal</a>
+          <a href="#bom" class="nav-link" data-section="bom">BOM Workspace</a>
+          <a href="#intelligence" class="nav-link" data-section="intelligence">Compatibility</a>
+          <a href="#suppliers" class="nav-link" data-section="suppliers">Suppliers</a>
+          <a href="#control-tower" class="nav-link" data-section="control-tower">Control Tower</a>
+          <a href="#history" class="nav-link" data-section="history">History</a>
+          <button type="button" class="nav-link-btn" onclick="openArchitectureModal()">Architecture</button>
+          <a href="/api/docs" target="_blank" rel="noreferrer" class="nav-link">API Docs</a>
+        </nav>
+
+        <div class="header-right">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>PayPal Sandbox Active</span>
+          </div>
+
+          <!-- Mobile Menu Toggle -->
+          <button id="mobile-menu-btn" type="button" aria-label="Toggle Navigation">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-drawer" class="mobile-nav-drawer">
+      <a href="#hero" class="nav-link" onclick="closeMobileDrawer()">Procurement Engine</a>
+      <a href="#how-it-works" class="nav-link" onclick="closeMobileDrawer()">How Nexus-Flow Works</a>
+      <a href="#terminal" class="nav-link" onclick="closeMobileDrawer()">Thought Terminal</a>
+      <a href="#bom" class="nav-link" onclick="closeMobileDrawer()">Bill of Materials</a>
+      <a href="#intelligence" class="nav-link" onclick="closeMobileDrawer()">Compatibility & Cost</a>
+      <a href="#suppliers" class="nav-link" onclick="closeMobileDrawer()">Supplier Intelligence</a>
+      <a href="#control-tower" class="nav-link" onclick="closeMobileDrawer()">Control Tower</a>
+      <a href="#history" class="nav-link" onclick="closeMobileDrawer()">Procurement History</a>
+      <a href="javascript:void(0)" class="nav-link" onclick="openArchitectureModal(); closeMobileDrawer();">Architecture &amp; Vision</a>
+      <a href="/api/docs" target="_blank" rel="noreferrer" class="nav-link">API Specification</a>
+      <a href="javascript:void(0)" class="nav-link" onclick="openPrivacyModal(); closeMobileDrawer();">Privacy Protocol</a>
+      <a href="javascript:void(0)" class="nav-link" onclick="openTermsModal(); closeMobileDrawer();">Terms &amp; Conditions</a>
+    </div>
+  </header>
+
+  <!-- Continuous Single-Scroll Page Main -->
+  <main class="continuous-layout">
+
+    <!-- =======================================================================
+         SECTION 1: HERO & UNIVERSAL PROCUREMENT BAR
+         Atmosphere: Obsidian Black #0B0B0D with subtle walnut light
+         ======================================================================= -->
+    <section id="hero" class="page-section section-hero">
+      <div class="app-container">
+        <div class="hero-grid">
+          <div class="hero-text-col">
+            <div class="hero-tag">
+              <span class="status-pulse-dot"></span>
+              <span>AUTONOMOUS PROCUREMENT &amp; FINANCIAL ORCHESTRATION</span>
+            </div>
+            <h1 class="hero-title">
+              From natural requirements to payment-ready procurement plans.
+            </h1>
+            <p class="hero-subtitle">
+              Describe what you need in plain English. Nexus-Flow deconstructs your specification, sources multi-vendor inventories, deterministically validates electrical compatibility, and prepares human-authorized multi-party PayPal checkout.
+            </p>
+
+            <div class="hero-metrics-strip">
+              <div class="hero-metric">
+                <span class="metric-val">8-Stage</span>
+                <span class="metric-lbl">Autonomous Pipeline</span>
+              </div>
+              <div class="hero-metric-divider"></div>
+              <div class="hero-metric">
+                <span class="metric-val">100%</span>
+                <span class="metric-lbl">Deterministic Electrical Validation</span>
+              </div>
+              <div class="hero-metric-divider"></div>
+              <div class="hero-metric">
+                <span class="metric-val">2.50%</span>
+                <span class="metric-lbl">Platform Take-Rate</span>
+              </div>
+              <div class="hero-metric-divider"></div>
+              <div class="hero-metric">
+                <span class="metric-val">PayPal Orders v2</span>
+                <span class="metric-lbl">Multi-Vendor Escrow</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Universal Procurement Bar -->
+        <div class="procurement-card">
+          <form onsubmit="submitProcurement(event)">
+            <div class="procurement-input-row">
+              <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+              <input
+                id="procurement-input"
+                type="text"
+                class="procurement-input"
+                placeholder="Describe your hardware requirement (e.g. Build me a complete DIY smart-home kit with an ESP32, relay modules, temperature sensors and power supply)..."
+                autocomplete="off"
+              >
+              <div class="procurement-actions">
+                <button type="button" class="btn-secondary" onclick="toggleAdvancedOptions()">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                  </svg>
+                  <span>Parameters</span>
+                </button>
+                <button id="compile-btn" type="submit" class="btn-primary">
+                  <span>Synthesize Plan</span>
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Expandable Advanced Parameters Panel -->
+            <div id="advanced-options-panel" class="advanced-panel">
+              <div class="param-group">
+                <span class="param-label">Budget Limit (USD):</span>
+                <input id="max-budget-input" type="number" placeholder="No limit" class="param-input">
+              </div>
+              <div class="param-group">
+                <span class="param-label">Optimization Strategy:</span>
+                <select id="strategy-select" class="param-select">
+                  <option value="recommended" selected>Recommended (Balanced Cost &amp; Lead Time)</option>
+                  <option value="lowest_cost">Lowest Landed Cost</option>
+                  <option value="delivery_priority">Fastest Express Delivery</option>
+                </select>
+              </div>
+              <label class="param-check">
+                <input type="checkbox" id="filter-verified-only" checked>
+                <span>Channel3 Verified Suppliers Only</span>
+              </label>
+              <div class="param-fee-badge">
+                Escrow Take-Rate: <strong>2.50%</strong>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Sample Demonstration Scenarios -->
+        <div class="scenarios-container">
+          <span class="scenarios-label">Sample Procurement Prompts:</span>
+          <button class="preset-chip" data-prompt="Build me a complete DIY smart-home kit with an ESP32, relay modules, temperature sensors and all required accessories. Budget $60.">
+            <span>Home Automation:</span> ESP32 + Relays + Sensors
+          </button>
+          <button class="preset-chip" data-prompt="Source components for an automated environmental climate monitor with BME280 sensor and OLED display">
+            <span>Laboratory:</span> Climate Monitor (BME280 + OLED)
+          </button>
+          <button class="preset-chip" data-prompt="Build an autonomous robot vision rover with ESP32 camera, PIR motion sensor, and isolated AC-DC power module">
+            <span>Robotics:</span> Autonomous Vision Rover
+          </button>
+        </div>
+
+        <!-- Notification Banner -->
+        <div id="success-banner" class="success-banner" style="display: none;">
+          <div class="banner-inner">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span id="success-msg">Procurement plan compiled and ready for review.</span>
+          </div>
+          <button onclick="document.getElementById('success-banner').style.display='none'" class="banner-dismiss">
+            Dismiss
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 2: HOW NEXUS-FLOW WORKS (PIPELINE ARCHITECTURE)
+         Atmosphere: Warm Walnut #30251F & Deep Charcoal
+         ======================================================================= -->
+    <section id="how-it-works" class="page-section section-how-it-works">
+      <div class="app-container">
+        <div class="section-header">
+          <div class="section-tag">PROCUREMENT LIFECYCLE &bull; 4 KEY PHASES</div>
+          <h2 class="section-title">How Autonomous Procurement Works</h2>
+          <p class="section-subtitle">
+            Traditional hardware procurement takes days of cross-referencing vendor catalogs, comparing distributor lead times, checking electrical specs, and coordinating purchase orders. Nexus-Flow executes this in seconds.
+          </p>
+        </div>
+
+        <div class="process-pipeline-grid">
+          <!-- Step 1 -->
+          <div class="process-step-card">
+            <div class="step-badge">STAGE 01</div>
+            <div class="step-icon">
+              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+            </div>
+            <h3 class="step-title">Autonomous BOM Decomposition</h3>
+            <p class="step-description">
+              Extracts precise hardware specifications, required voltage tolerances (3.3V/5V), communication interfaces (I2C/SPI/UART), power limits, and quantities from plain-text prompts.
+            </p>
+            <div class="step-tag-pill">AI Spec Extraction</div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-step-card">
+            <div class="step-badge">STAGE 02</div>
+            <div class="step-icon">
+              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+            <h3 class="step-title">Dual Sourcing &amp; Live Crawling</h3>
+            <p class="step-description">
+              Simultaneously interrogates Channel3 verified distributor networks and executes live Kernel web crawler fallback across global electronics suppliers to locate in-stock parts.
+            </p>
+            <div class="step-tag-pill">Channel3 &amp; Kernel</div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-step-card">
+            <div class="step-badge">STAGE 03</div>
+            <div class="step-icon">
+              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="step-title">Deterministic Compatibility</h3>
+            <p class="step-description">
+              Applies rigorous mathematical validation: checks logic voltage levels (3.3V vs 5V), detects I2C address collisions, tallies power supply milliamp budgets, and auto-substitutes out-of-stock items.
+            </p>
+            <div class="step-tag-pill">Zero AI Hallucinations</div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-step-card">
+            <div class="step-badge">STAGE 04</div>
+            <div class="step-icon">
+              <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.806 1.57 1.258 1.05 1.768 2.628 1.474 4.56-.47 3.092-2.38 5.253-5.522 6.251 1.637.525 2.57 1.69 2.188 4.204-.47 3.092-2.38 5.253-5.522 6.251-.622.198-1.306.301-2.034.301H7.076z"/>
+              </svg>
+            </div>
+            <h3 class="step-title">PayPal Orders v2 Checkout</h3>
+            <p class="step-description">
+              Consolidates multi-vendor shipments into a single human-authorized PayPal checkout. Automatically manages delayed multi-vendor escrow disbursement and carrier tracking lock.
+            </p>
+            <div class="step-tag-pill">Delayed Escrow Lock</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 3: LIVE PROCUREMENT / AGENT EXECUTION TERMINAL
+         Atmosphere: Deep Graphite #191A1B with Live SSE Telemetry
+         ======================================================================= -->
+    <section id="terminal" class="page-section section-terminal">
+      <div class="app-container">
+        <div class="section-header">
+          <div class="section-tag">LIVE TELEMETRY &bull; SERVER-SENT EVENTS</div>
+          <h2 class="section-title">Agent Execution Thought Terminal</h2>
+          <p class="section-subtitle">
+            Observe the autonomous multi-agent pipeline in real-time as Requirement Parsing, Catalog Sourcing, Pinout Compatibility, and Cost Optimization agents collaborate.
+          </p>
+        </div>
+
+        <div id="terminal-container" class="terminal-card">
+          <div class="terminal-header">
+            <div class="terminal-header-left">
+              <div class="terminal-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="terminal-title">
+                MULTI-AGENT EXECUTION STREAM (SSE PROTOCOL)
+              </span>
+            </div>
+            <div class="terminal-header-right">
+              <button class="btn-secondary terminal-ctrl-btn" onclick="copyTerminalLogs()">
+                Copy Telemetry
+              </button>
+              <button class="btn-secondary terminal-ctrl-btn" onclick="clearTerminalLogs()">
+                Clear
+              </button>
+              <div id="terminal-status" class="terminal-status-indicator">
+                <span class="status-dot"></span> PIPELINE IDLE &bull; READY
+              </div>
+            </div>
+          </div>
+          <div id="terminal-logs" class="terminal-body">
+            <!-- Initial Seeded / Instructional Logs -->
+            <div class="terminal-row">
+              <div class="terminal-time">[00:00:01]</div>
+              <div class="terminal-row-content">
+                <div class="terminal-agent-line">
+                  <span class="terminal-agent">Orchestrator:</span>
+                  <span class="terminal-action">Pipeline Standby</span>
+                  <span class="terminal-status-badge status-verified">APIMATIC READY</span>
+                </div>
+                <div class="terminal-detail">
+                  Awaiting natural language procurement specification or select a sample scenario above.
+                </div>
+              </div>
+            </div>
+            <div class="terminal-row">
+              <div class="terminal-time">[00:00:02]</div>
+              <div class="terminal-row-content">
+                <div class="terminal-agent-line">
+                  <span class="terminal-agent">Channel3Connector:</span>
+                  <span class="terminal-action">Supplier Network Handshake</span>
+                  <span class="terminal-status-badge status-completed">CONNECTED</span>
+                </div>
+                <div class="terminal-detail">
+                  Verified distributor catalogs online: Mouser, DigiKey, Adafruit, SparkFun, Seeed Studio.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 4: UNIFIED BILL OF MATERIALS (BOM)
+         Atmosphere: Warm Dark Matte Surfaces & Product Inventory
+         ======================================================================= -->
+    <section id="bom" class="page-section section-bom">
+      <div class="app-container">
+        <div class="section-header">
+          <div class="section-tag">CONSOLIDATED SPECIFICATION &bull; INTERACTIVE BOM</div>
+          <h2 class="section-title">Unified Bill of Materials</h2>
+          <p class="section-subtitle">
+            Every sourced component with verified electrical specifications, real-time distributor pricing, quantity adjustments, and autonomous substitutions.
+          </p>
+        </div>
+
+        <div id="bom-container" class="bom-card">
+          <div class="bom-header">
+            <div>
+              <div class="bom-badges-strip">
+                <span id="bom-id-badge" class="badge-mono badge-id">
+                  BOM-2026-8812
+                </span>
+                <span id="bom-approval-status-badge" class="badge-mono badge-pending">
+                  Pending Approval
+                </span>
+                <span id="bom-compat-badge" class="badge-compat compatible">
+                  Compatibility Verified
+                </span>
+                <span class="badge-certified">
+                  &bull; APIMatic Certified
+                </span>
+              </div>
+              <h3 class="bom-title">Smart Home Autonomous Gateway (BOM)</h3>
+              <p id="bom-prompt-display" class="bom-prompt-text">
+                Build me a complete DIY smart-home kit with an ESP32, relay modules, temperature sensors and all required accessories.
+              </p>
+            </div>
+            <div class="bom-financial-summary">
+              <div class="bom-total-label">Consolidated Landed Cost</div>
+              <div id="bom-total-amount" class="bom-total-value">$46.68 USD</div>
+              <div class="bom-total-subtext">Includes freight, customs duty &amp; multi-vendor escrow</div>
+            </div>
+          </div>
+
+          <!-- Budget Utilization Bar -->
+          <div id="budget-progress-container" class="budget-bar-section" style="display: none;">
+            <div class="budget-bar-header">
+              <span class="budget-label">Budget Utilization:</span>
+              <span id="budget-progress-text" class="budget-pct">0% consumed</span>
+            </div>
+            <div class="budget-track">
+              <div id="budget-progress-fill" class="budget-fill"></div>
+            </div>
+          </div>
+
+          <!-- Tab Bar & Sourcing Actions -->
+          <div class="bom-tabs">
+            <div class="bom-tabs-left">
+              <button id="tab-btn-items" class="bom-tab-btn active" onclick="switchBOMTab('items')">
+                Sourced Line Items <span id="bom-items-tab-count">(4)</span>
+              </button>
+              <button id="tab-btn-splits" class="bom-tab-btn" onclick="switchBOMTab('splits')">
+                Multi-Vendor Allocation <span id="bom-splits-tab-count">(2)</span>
+              </button>
+              <button id="tab-btn-compat" class="bom-tab-btn" onclick="switchBOMTab('compat')">
+                Technical Compatibility
+              </button>
+              <button id="tab-btn-compliance" class="bom-tab-btn" onclick="switchBOMTab('compliance')">
+                APIMatic Audit
+              </button>
+            </div>
+            <div class="bom-tabs-right">
+              <span class="strategy-label">Strategy:</span>
+              <select id="bom-strategy-switch" onchange="onStrategyChange(this.value)" class="strategy-select-compact">
+                <option value="recommended">Recommended</option>
+                <option value="lowest_cost">Lowest Cost</option>
+                <option value="delivery_priority">Fast Delivery</option>
+              </select>
+              <button class="btn-secondary btn-compact" onclick="exportBOMToCSV()">CSV</button>
+              <button class="btn-secondary btn-compact" onclick="copyAPIMaticPayload()">Payload</button>
+            </div>
+          </div>
+
+          <!-- Tab Content Container -->
+          <div id="bom-tab-content" class="bom-list"></div>
+
+          <!-- BOM Footer Financial Summary & Human Approval Bar -->
+          <div class="bom-footer-bar">
+            <div class="bom-cost-breakdown">
+              <div>Subtotal: <strong id="bom-subtotal">$38.40</strong></div>
+              <div>Platform Fee (2.5%): <strong id="bom-fee" class="fee-amber">$0.96</strong></div>
+              <div>Consolidated Freight: <strong id="bom-shipping">$6.50</strong></div>
+              <div>Duty &amp; Tax: <strong id="bom-tax">$0.82</strong></div>
+            </div>
+            <div class="bom-actions-group">
+              <button id="approve-plan-btn" type="button" class="btn-approve" onclick="approvePlan()">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Approve Procurement Plan</span>
+              </button>
+              <button id="checkout-paypal-btn" type="button" class="btn-paypal" style="opacity: 0.5; pointer-events: none;" onclick="openPayPalModal()">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.806 1.57 1.258 1.05 1.768 2.628 1.474 4.56-.47 3.092-2.38 5.253-5.522 6.251 1.637.525 2.57 1.69 2.188 4.204-.47 3.092-2.38 5.253-5.522 6.251-.622.198-1.306.301-2.034.301H7.076z"/>
+                </svg>
+                <span>Pay with PayPal</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 5: COMPATIBILITY AND COST OPTIMIZATION INTELLIGENCE
+         Atmosphere: Sage-Tinted Atmospheric Environment
+         ======================================================================= -->
+    <section id="intelligence" class="page-section section-intelligence">
+      <div class="app-container">
+        <div class="section-header">
+          <div class="section-tag">TECHNICAL INVARIANTS &bull; ZERO HALLUCINATIONS</div>
+          <h2 class="section-title">Deterministic Compatibility &amp; Cost Optimizer</h2>
+          <p class="section-subtitle">
+            Nexus-Flow separates probabilistic LLM extraction from deterministic engineering validation. Electrical rules, bus collision engines, and landed cost formulas run without hallucination risk.
+          </p>
+        </div>
+
+        <div class="intelligence-grid">
+          <!-- Card 1: Electrical & Voltage Logic -->
+          <div class="intel-card">
+            <div class="intel-card-header">
+              <span class="intel-badge sage">VOLTAGE &amp; LOGIC LEVELS</span>
+              <span class="intel-status-pill verified">Validated</span>
+            </div>
+            <h4 class="intel-title">Logic-Level Shift &amp; Operating Range</h4>
+            <p class="intel-description">
+              Evaluates master MCU logic tolerances (ESP32: 3.3V GPIO) against connected peripheral modules (5V relays, sensors). Automatically flags missing bi-directional level shifters.
+            </p>
+            <div class="intel-meter-row">
+              <span class="meter-label">GPIO 3.3V Compatibility:</span>
+              <span class="meter-val text-sage">100% In-Range</span>
+            </div>
+            <div class="intel-meter-row">
+              <span class="meter-label">Logic Level Mismatch:</span>
+              <span class="meter-val text-sage">0 Conflicts</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Bus & Pinout Collisions -->
+          <div class="intel-card">
+            <div class="intel-card-header">
+              <span class="intel-badge cyan">I2C &amp; SPI PROTOCOL BUS</span>
+              <span class="intel-status-pill verified">Arbitrated</span>
+            </div>
+            <h4 class="intel-title">Bus Addressing &amp; Pinout Collisions</h4>
+            <p class="intel-description">
+              Scans hardware I2C address hex space (e.g. BME280 at 0x76/0x77 vs OLED SSD1306 at 0x3C). Guarantees distinct addresses on shared hardware clock/data lines without pin contention.
+            </p>
+            <div class="intel-meter-row">
+              <span class="meter-label">I2C Address Space:</span>
+              <span class="meter-val text-cyan">Distinct Hex Slots</span>
+            </div>
+            <div class="intel-meter-row">
+              <span class="meter-label">Pinout Overlap:</span>
+              <span class="meter-val text-sage">0 Contention</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Power Budget Engine -->
+          <div class="intel-card">
+            <div class="intel-card-header">
+              <span class="intel-badge amber">POWER BUDGET AUDIT</span>
+              <span class="intel-status-pill verified">Safe Margin</span>
+            </div>
+            <h4 class="intel-title">Milliamp Draw vs Regulator Output</h4>
+            <p class="intel-description">
+              Tallies cumulative current consumption across active transmitters (ESP32 WiFi/BLE: ~500mA peak) and inductive loads. Ensures power supply supplies &gt;25% safety headroom.
+            </p>
+            <div class="intel-meter-row">
+              <span class="meter-label">Peak Draw:</span>
+              <span class="meter-val text-primary">820 mA</span>
+            </div>
+            <div class="intel-meter-row">
+              <span class="meter-label">PSU Capacity:</span>
+              <span class="meter-val text-sage">1,000 mA (18% Headroom)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 6: SUPPLIER INTELLIGENCE & VENDOR COMPARISON
+         Atmosphere: Deep Charcoal & Walnut Contrast
+         ======================================================================= -->
+    <section id="suppliers" class="page-section section-suppliers">
+      <div class="app-container">
+        <div class="section-header">
+          <div class="section-tag">MULTI-VENDOR COMPARISON MATRIX</div>
+          <h2 class="section-title">Supplier Intelligence &amp; Sourcing Matrix</h2>
+          <p class="section-subtitle">
+            Nexus-Flow actively benchmarks multi-vendor availability, lead times, on-time performance, and escrow reliability across global verified electronics distributors.
+          </p>
+        </div>
+
+        <div class="supplier-matrix-card">
+          <div class="table-responsive">
+            <table class="control-tower-grid">
+              <thead>
+                <tr>
+                  <th>Distributor / Supplier</th>
+                  <th>Network Status</th>
+                  <th>Historical Orders</th>
+                  <th>On-Time Delivery</th>
+                  <th>Avg Lead Time</th>
+                  <th>Escrow Rating</th>
+                  <th>Consolidated Freight</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="vendor-name-col">
+                      <strong>Mouser Electronics</strong>
+                      <span class="vendor-origin">United States &bull; Global Hub</span>
+                    </div>
+                  </td>
+                  <td><span class="vendor-badge-verified">Channel3 Verified</span></td>
+                  <td>1,842 Orders</td>
+                  <td class="text-sage font-mono">99.2%</td>
+                  <td class="font-mono">2-3 Days</td>
+                  <td><span class="escrow-pill grade-a">Grade A+ (99.8%)</span></td>
+                  <td class="font-mono text-primary">$4.50 Flat</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="vendor-name-col">
+                      <strong>DigiKey Electronics</strong>
+                      <span class="vendor-origin">United States &bull; Primary Hub</span>
+                    </div>
+                  </td>
+                  <td><span class="vendor-badge-verified">Channel3 Verified</span></td>
+                  <td>2,109 Orders</td>
+                  <td class="text-sage font-mono">98.9%</td>
+                  <td class="font-mono">2-4 Days</td>
+                  <td><span class="escrow-pill grade-a">Grade A+ (99.6%)</span></td>
+                  <td class="font-mono text-primary">$4.95 Flat</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="vendor-name-col">
+                      <strong>Adafruit Industries</strong>
+                      <span class="vendor-origin">New York, NY &bull; Maker Specialty</span>
+                    </div>
+                  </td>
+                  <td><span class="vendor-badge-verified">Channel3 Verified</span></td>
+                  <td>940 Orders</td>
+                  <td class="text-sage font-mono">97.8%</td>
+                  <td class="font-mono">3-5 Days</td>
+                  <td><span class="escrow-pill grade-a">Grade A (98.4%)</span></td>
+                  <td class="font-mono text-primary">$5.50 Flat</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="vendor-name-col">
+                      <strong>SparkFun Electronics</strong>
+                      <span class="vendor-origin">Niwot, CO &bull; IoT Components</span>
+                    </div>
+                  </td>
+                  <td><span class="vendor-badge-verified">Channel3 Verified</span></td>
+                  <td>612 Orders</td>
+                  <td class="text-sage font-mono">98.1%</td>
+                  <td class="font-mono">3-5 Days</td>
+                  <td><span class="escrow-pill grade-a">Grade A (98.2%)</span></td>
+                  <td class="font-mono text-primary">$5.25 Flat</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="vendor-name-col">
+                      <strong>Seeed Studio Sourcing</strong>
+                      <span class="vendor-origin">Shenzhen, CN &bull; Direct Sourcing</span>
+                    </div>
+                  </td>
+                  <td><span class="vendor-badge-verified">Kernel Indexed</span></td>
+                  <td>430 Orders</td>
+                  <td class="text-amber font-mono">94.5%</td>
+                  <td class="font-mono">6-9 Days</td>
+                  <td><span class="escrow-pill grade-b">Grade B+ (94.9%)</span></td>
+                  <td class="font-mono text-primary">$7.80 Duty Paid</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 7: PAYPAL CHECKOUT & PURCHASE AUTHORIZATION
+         Atmosphere: Restrained Warm Ivory & Dark Contrast
+         ======================================================================= -->
+    <section id="checkout" class="page-section section-checkout">
+      <div class="app-container">
+        <div class="section-header">
+          <div class="section-tag">FINANCIAL ORCHESTRATION &bull; PAYPAL ORDERS V2</div>
+          <h2 class="section-title">Human-Authorized Multi-Party Settlement</h2>
+          <p class="section-subtitle">
+            Autonomous procurement requires rigorous financial guardrails. The buyer approves the consolidated plan once; PayPal partitions disbursements directly to individual vendors under carrier escrow hold.
+          </p>
+        </div>
+
+        <div class="checkout-feature-grid">
+          <div class="checkout-feature-card">
+            <div class="feature-icon-circle paypal-blue-bg">
+              <svg width="22" height="22" fill="#fff" viewBox="0 0 24 24">
+                <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.806 1.57 1.258 1.05 1.768 2.628 1.474 4.56-.47 3.092-2.38 5.253-5.522 6.251 1.637.525 2.57 1.69 2.188 4.204-.47 3.092-2.38 5.253-5.522 6.251-.622.198-1.306.301-2.034.301H7.076z"/>
+              </svg>
+            </div>
+            <h4 class="feature-title">Multi-Vendor Partitioning</h4>
+            <p class="feature-desc">
+              One unified charge to the buyer. PayPal distributes vendor payouts automatically into separate seller accounts with no manual re-invoicing.
+            </p>
+          </div>
+
+          <div class="checkout-feature-card">
+            <div class="feature-icon-circle sage-bg">
+              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+              </svg>
+            </div>
+            <h4 class="feature-title">Delayed Carrier Escrow</h4>
+            <p class="feature-desc">
+              Vendor payouts remain locked in escrow until FedEx, DHL, or UPS delivery scans confirm physical arrival, protecting buyers against fulfillment defaults.
+            </p>
+          </div>
+
+          <div class="checkout-feature-card">
+            <div class="feature-icon-circle cyan-bg">
+              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+            <h4 class="feature-title">APIMatic Certified Contracts</h4>
+            <p class="feature-desc">
+              Guarantees strict schema conformity across all line items, tax IDs, merchant fees (2.50%), and currency decimal points.
+            </p>
+          </div>
+        </div>
+
+        <div class="checkout-callout-banner">
+          <div class="callout-content">
+            <div class="callout-tag">READY FOR AUTHORIZATION</div>
+            <div class="callout-title">Authorize Current Procurement Plan</div>
+            <div class="callout-desc">Approve the active Bill of Materials above and initiate multi-party settlement through the official PayPal sandbox.</div>
+          </div>
+          <button type="button" class="btn-paypal btn-large" onclick="openPayPalModal()">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.806 1.57 1.258 1.05 1.768 2.628 1.474 4.56-.47 3.092-2.38 5.253-5.522 6.251 1.637.525 2.57 1.69 2.188 4.204-.47 3.092-2.38 5.253-5.522 6.251-.622.198-1.306.301-2.034.301H7.076z"/>
+            </svg>
+            <span>Proceed to PayPal Checkout</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 8: MERCHANT CONTROL TOWER (AG GRID & TELEMETRY MATRIX)
+         Atmosphere: Dark Graphite Environment
+         ======================================================================= -->
+    <section id="control-tower" class="page-section section-control-tower">
+      <div class="app-container">
+        <div class="section-header">
+          <div class="section-tag">OPERATIONAL TELEMATICS &bull; AG GRID</div>
+          <h2 class="section-title">Merchant Control Tower</h2>
+          <p class="section-subtitle">
+            Real-time supply chain telematics, multi-agent fleet health, and PayPal Orders v2 multi-vendor escrow settlement tracking.
+          </p>
+        </div>
+
+        <!-- KPI Cards -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-label">Active Telemetry Shipments</div>
+            <div id="kpi-shipments" class="kpi-value">6</div>
+            <div class="kpi-subtext text-sage">100% Tracking Resolution</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-label">Agent Fleet Health</div>
+            <div id="kpi-fleet-health" class="kpi-value text-sage">99.8%</div>
+            <div class="kpi-subtext">Average latency: 142 ms</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-label">Settled Volume (USD)</div>
+            <div id="kpi-settled-vol" class="kpi-value text-sage">$554.70</div>
+            <div class="kpi-subtext">PayPal Commerce Multi-Vendor</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-label">Escrow Integrity</div>
+            <div id="kpi-escrow-rate" class="kpi-value text-cyan">100.0%</div>
+            <div class="kpi-subtext">APIMatic certified contracts</div>
+          </div>
+        </div>
+
+        <!-- Control Tower Matrix Card -->
+        <div class="tower-card">
+          <div class="tower-header">
+            <div class="tower-header-left">
+              <span class="status-dot"></span>
+              <strong class="tower-title">CONTROL TOWER TELEMETRY MATRIX</strong>
+              <span class="tower-feed-tag">AG GRID LIVE FEED</span>
+            </div>
+            <div class="tower-header-right">
+              <button id="tower-btn-shipments" class="btn-primary tower-tab-btn" onclick="switchControlTowerTab('shipments')">
+                Shipment Telemetry
+              </button>
+              <button id="tower-btn-suppliers" class="nav-link tower-tab-btn" onclick="switchControlTowerTab('suppliers')">
+                Supplier Intelligence
+              </button>
+              <button id="tower-btn-agents" class="nav-link tower-tab-btn" onclick="switchControlTowerTab('agents')">
+                Agent Fleet Health
+              </button>
+              <button id="tower-btn-payments" class="nav-link tower-tab-btn" onclick="switchControlTowerTab('payments')">
+                Payment Routes &amp; Escrow
+              </button>
+            </div>
+          </div>
+
+          <!-- AG Grid Search & Filter Toolbar -->
+          <div id="tower-toolbar" class="tower-toolbar">
+            <div class="tower-search-box">
+              <input
+                id="telemetry-search-input"
+                type="text"
+                placeholder="Filter tracking, SKU, carrier, status..."
+                onkeyup="filterTelemetryTable()"
+                class="tower-search-input"
+              >
+            </div>
+            <div class="tower-filters-strip">
+              <button class="preset-chip" onclick="setTelemetryStatusFilter('ALL')">All</button>
+              <button class="preset-chip" onclick="setTelemetryStatusFilter('In Transit')">In Transit</button>
+              <button class="preset-chip" onclick="setTelemetryStatusFilter('Delivered')">Delivered</button>
+              <button class="preset-chip" onclick="setTelemetryStatusFilter('Customs')">Customs</button>
+              <button class="preset-chip" onclick="setTelemetryStatusFilter('Delayed')">Delayed</button>
+              <button class="btn-secondary btn-compact" onclick="refreshControlTowerData(this)">
+                <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                </svg>
+                <span>Refresh</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Tab 1: Shipments -->
+          <div id="tower-shipments-tab" class="table-responsive">
+            <table class="control-tower-grid">
+              <thead>
+                <tr>
+                  <th onclick="sortTelemetryTable(0)" class="sortable-th">Tracking ID &#x25B4;&#x25BE;</th>
+                  <th onclick="sortTelemetryTable(1)" class="sortable-th">Component &amp; SKU &#x25B4;&#x25BE;</th>
+                  <th onclick="sortTelemetryTable(2)" class="sortable-th">Supplier &#x25B4;&#x25BE;</th>
+                  <th>Origin &rarr; Destination</th>
+                  <th onclick="sortTelemetryTable(4)" class="sortable-th">Carrier &#x25B4;&#x25BE;</th>
+                  <th onclick="sortTelemetryTable(5)" class="sortable-th">Status &#x25B4;&#x25BE;</th>
+                  <th onclick="sortTelemetryTable(6)" class="sortable-th">ETA &#x25B4;&#x25BE;</th>
+                  <th onclick="sortTelemetryTable(7)" class="sortable-th">Risk &#x25B4;&#x25BE;</th>
+                </tr>
+              </thead>
+              <tbody id="telemetry-table-body"></tbody>
+            </table>
+          </div>
+
+          <!-- Tab 2: Supplier Intelligence -->
+          <div id="tower-suppliers-tab" class="table-responsive" style="display: none;">
+            <table class="control-tower-grid">
+              <thead>
+                <tr>
+                  <th>Supplier Name</th>
+                  <th>Country</th>
+                  <th>Verification Level</th>
+                  <th>Historical Orders</th>
+                  <th>Total Volume (USD)</th>
+                  <th>On-Time Rate</th>
+                  <th>Avg Lead Time</th>
+                  <th>Risk Level</th>
+                </tr>
+              </thead>
+              <tbody id="suppliers-table-body"></tbody>
+            </table>
+          </div>
+
+          <!-- Tab 3: Agent Fleet Health -->
+          <div id="tower-agents-tab" class="tower-agents-panel" style="display: none;">
+            <div id="agents-grid" class="agents-grid"></div>
+          </div>
+
+          <!-- Tab 4: Payments & Escrow -->
+          <div id="tower-payments-tab" class="table-responsive" style="display: none;">
+            <table class="control-tower-grid">
+              <thead>
+                <tr>
+                  <th>Routing Reference</th>
+                  <th>Order ID</th>
+                  <th>Gross (USD)</th>
+                  <th>Platform Fee (2.5%)</th>
+                  <th>Vendor Payout</th>
+                  <th>Payee PayPal Account</th>
+                  <th>Escrow Status</th>
+                  <th>Audit Standard</th>
+                </tr>
+              </thead>
+              <tbody id="payments-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 9: PROCUREMENT HISTORY
+         Atmosphere: Obsidian Black & Historical Archive
+         ======================================================================= -->
+    <section id="history" class="page-section section-history">
+      <div class="app-container">
+        <div class="section-header">
+          <div class="section-tag">AUDIT TRAIL &bull; REPLAY HISTORICAL PLANS</div>
+          <h2 class="section-title">Procurement Plan Archive</h2>
+          <p class="section-subtitle">
+            Chronological record of autonomous sourcing requests, component decomposition states, technical audits, and settlement authorizations.
+          </p>
+        </div>
+
+        <div class="history-card">
+          <div class="history-header">
+            <strong class="history-title">HISTORICAL PROCUREMENT PLANS</strong>
+            <button class="btn-secondary btn-compact" onclick="loadProcurementHistory()">
+              Refresh History
+            </button>
+          </div>
+          <div id="history-list-container" class="history-list"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       SECTION 10: MINIMAL ELEGANT FOOTER
+       Atmosphere: Deep Obsidian #0B0B0D
+       ========================================================================= -->
+  <footer id="footer">
+    <div class="app-container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <div class="footer-brand">
+            <div class="brand-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <strong>NEXUS-FLOW</strong>
+          </div>
+          <p class="footer-desc">
+            Autonomous AI-powered procurement and financial orchestration platform. Built for the PayPal AI Hackathon 2026.
+          </p>
+          <div class="footer-version">
+            Protocol Version: 1.0.0-PROD &bull; PayPal Orders v2 Certified
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Integrations &amp; Protocols</h4>
+          <ul class="footer-links-list">
+            <li><span class="text-secondary">PayPal Commerce:</span> Orders v2 Multi-Vendor</li>
+            <li><span class="text-secondary">APIMatic:</span> Contract Schema Invariants</li>
+            <li><span class="text-secondary">Channel3:</span> B2B Supplier Catalogs</li>
+            <li><span class="text-secondary">Kernel:</span> Deep Web Price Discovery</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Platform Sections</h4>
+          <ul class="footer-links-list">
+            <li><a href="#hero" class="footer-link">Procurement Engine</a></li>
+            <li><a href="#how-it-works" class="footer-link">How It Works</a></li>
+            <li><a href="#terminal" class="footer-link">Thought Terminal</a></li>
+            <li><a href="#bom" class="footer-link">Unified BOM</a></li>
+            <li><a href="#intelligence" class="footer-link">Compatibility Validation</a></li>
+            <li><a href="#control-tower" class="footer-link">Merchant Control Tower</a></li>
+            <li><a href="#history" class="footer-link">Procurement History</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Compliance &amp; Contact</h4>
+          <div class="footer-contact">
+            <div>Nexus Protocol Engineering Desk</div>
+            <div>Email: <a href="mailto:protocol@nexusflow.network" class="footer-link">protocol@nexusflow.network</a></div>
+            <div>Phone: <a href="tel:+18005550199" class="footer-link">+1 (800) 555-0199</a></div>
+            <div class="footer-escrow-note">Escrow hold: 72 hours post-delivery verification</div>
+            <div class="footer-legal-buttons">
+              <button type="button" class="legal-link-btn" onclick="openPrivacyModal()">Privacy Policy</button>
+              <span class="divider">&bull;</span>
+              <button type="button" class="legal-link-btn" onclick="openTermsModal()">Terms of Service</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Nexus-Flow Autonomous Commerce Protocol. Built for the Global PayPal &amp; AI Hackathon.</div>
+        <div class="footer-meta font-mono">TLS 1.3 / HSTS Enforced / APIMatic Validated / Orders v2</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODAL 1: PAYPAL ORDERS V2 CHECKOUT
+       ========================================================================= -->
+  <div id="paypal-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-header-left">
+          <div class="paypal-badge-icon">
+            <svg width="18" height="18" fill="#ffffff" viewBox="0 0 24 24">
+              <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.806 1.57 1.258 1.05 1.768 2.628 1.474 4.56-.47 3.092-2.38 5.253-5.522 6.251 1.637.525 2.57 1.69 2.188 4.204-.47 3.092-2.38 5.253-5.522 6.251-.622.198-1.306.301-2.034.301H7.076z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="modal-title">PayPal Orders v2 Checkout</h3>
+            <p class="modal-subtitle">Sandbox Environment &bull; Multi-Party Delayed Escrow</p>
+          </div>
+        </div>
+        <button onclick="closePayPalModal()" class="modal-close-btn" aria-label="Close Modal">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-content">
+        <!-- Pre-capture details -->
+        <div id="modal-pre-capture">
+          <div class="modal-summary-box">
+            <div class="summary-line">
+              <span>BOM Reference:</span>
+              <span id="modal-bom-ref" class="font-mono text-primary">BOM-000</span>
+            </div>
+            <div class="summary-line">
+              <span>PayPal Order ID:</span>
+              <div class="order-id-group">
+                <span id="modal-order-id" class="font-mono text-sage">5PL000</span>
+                <button class="btn-secondary btn-mini" onclick="copyPayPalOrderId()">Copy</button>
+              </div>
+            </div>
+            <div class="summary-line">
+              <span>Disbursement Vendors:</span>
+              <span id="modal-vendor-count" class="font-mono text-primary">0 Accounts</span>
+            </div>
+            <div class="summary-line">
+              <span>Platform Take-Rate (2.50%):</span>
+              <span id="modal-fee" class="font-mono text-primary">$0.00 USD</span>
+            </div>
+            <div class="summary-total-line">
+              <span>Total Authorization:</span>
+              <span id="modal-total" class="font-mono text-sage">$0.00 USD</span>
+            </div>
+          </div>
+
+          <div class="splits-container">
+            <div class="splits-title">Multi-Vendor Disbursement Partitioning:</div>
+            <div id="modal-splits-list" class="splits-list"></div>
+          </div>
+
+          <div id="modal-error" class="modal-error-box" style="display: none;"></div>
+        </div>
+
+        <!-- Post-capture confirmation -->
+        <div id="modal-post-capture" class="post-capture-box" style="display: none;">
+          <div class="success-checkmark-circle">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <h4 class="post-capture-title">Payment Captured &amp; Escrow Initialized</h4>
+          <p class="post-capture-desc">
+            Funds held in multi-vendor escrow. Payout release is synchronized with carrier delivery telematics (FedEx, DHL, UPS).
+          </p>
+          <div class="capture-receipt-box">
+            <div>Capture Reference: <span id="modal-capture-ref" class="text-sage">CAP-000</span></div>
+            <div>Escrow Status: <span id="modal-escrow-status" class="text-sage">HELD_IN_ESCROW</span></div>
+            <div>Disbursement Mode: <span class="text-secondary">DELAYED (Carrier Lock)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" onclick="closePayPalModal()">Close</button>
+        <button id="modal-confirm-btn" type="button" class="btn-paypal" onclick="confirmPayPalCapture()">
+          Authorize &amp; Complete Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 2: ARCHITECTURE & VISION
+       ========================================================================= -->
+  <div id="architecture-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-box modal-box-large">
+      <div class="modal-header">
+        <div>
+          <div class="modal-tag">CORE ARCHITECTURAL FOUNDATION &bull; HACKATHON 2026</div>
+          <h3 class="modal-title">Autonomous Multi-Agent Architecture</h3>
+        </div>
+        <button onclick="closeArchitectureModal()" class="modal-close-btn" aria-label="Close Modal">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-content">
+        <p class="arch-intro">
+          Hardware procurement loses weeks to fragmented vendor catalogs, manual pinout reviews, and disjointed invoices. Nexus-Flow bridges this with an 8-stage autonomous pipeline and PayPal multi-party commerce.
+        </p>
+
+        <div class="arch-stages-grid">
+          <div class="arch-card">
+            <span class="arch-stage-num text-sage">STAGE 1 &amp; 2</span>
+            <h4>Requirement Decomposition</h4>
+            <p>Deconstructs conversational natural language into structured technical specifications with strict voltage, power, and pinout invariants.</p>
+          </div>
+          <div class="arch-card">
+            <span class="arch-stage-num text-cyan">STAGE 3 &amp; 4</span>
+            <h4>Channel3 &amp; Kernel Sourcing</h4>
+            <p>Queries Channel3 B2B distributor networks with live Kernel deep web crawler fallback for real-time inventories and volume discount breaks.</p>
+          </div>
+          <div class="arch-card">
+            <span class="arch-stage-num text-amber">STAGE 5 &amp; 6</span>
+            <h4>Compatibility &amp; Landed Cost</h4>
+            <p>Applies mathematical rules for 3.3V vs 5V logic shifts, I2C collision avoidance, milliamp budget checks, and freight minimization algorithms.</p>
+          </div>
+          <div class="arch-card">
+            <span class="arch-stage-num text-paypal">STAGE 7 &amp; 8</span>
+            <h4>PayPal Orders v2 Checkout</h4>
+            <p>Partitions a single authorized buyer payment into discrete vendor disbursements with carrier-locked delayed escrow release.</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" onclick="closeArchitectureModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 3: PRIVACY POLICY
+       ========================================================================= -->
+  <div id="privacy-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-box modal-box-large">
+      <div class="modal-header">
+        <div>
+          <div class="modal-tag">DATA GOVERNANCE &bull; ENTERPRISE COMPLIANCE</div>
+          <h3 class="modal-title">Privacy Policy</h3>
+        </div>
+        <button onclick="closePrivacyModal()" class="modal-close-btn" aria-label="Close Modal">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-content legal-content">
+        <section>
+          <h4>1. Information Collection &amp; Processing</h4>
+          <p>Nexus-Flow collects procurement specifications, electrical requirements, and quantity parameters entered into the workspace. When authenticating, credentials are cryptographically protected via salted PBKDF2-HMAC-SHA256 with 100,000 rounds. We do not store payment card numbers; all payment transactions are processed securely through the PayPal Commerce Platform.</p>
+        </section>
+        <section>
+          <h4>2. Sourcing and Third-Party API Integrations</h4>
+          <p>Procurement queries transmitted to Channel3 and Kernel are strictly anonymized technical component strings. No buyer identity or financial account information is provided to supplier catalog endpoints.</p>
+        </section>
+        <section>
+          <h4>3. PayPal Payment Data Governance</h4>
+          <p>PayPal Orders v2 transactions are governed by PayPal's privacy framework. Nexus-Flow maintains order identifiers, capture references, and settlement timestamps to guarantee multi-vendor escrow delivery verification.</p>
+        </section>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" onclick="closePrivacyModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 4: TERMS AND CONDITIONS
+       ========================================================================= -->
+  <div id="terms-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-box modal-box-large">
+      <div class="modal-header">
+        <div>
+          <div class="modal-tag">COMMERCIAL AGREEMENT &bull; MULTI-VENDOR SOURCING</div>
+          <h3 class="modal-title">Terms and Conditions</h3>
+        </div>
+        <button onclick="closeTermsModal()" class="modal-close-btn" aria-label="Close Modal">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-content legal-content">
+        <section>
+          <h4>1. Platform Purpose &amp; Scope</h4>
+          <p>Nexus-Flow is an autonomous procurement intelligence protocol that facilitates hardware Bill of Materials compilation, inventory querying, technical compatibility checking, and financial checkout through PayPal. Users retain responsibility for reviewing their final BOM before granting purchase authorization.</p>
+        </section>
+        <section>
+          <h4>2. Multi-Vendor Escrow &amp; Platform Fees</h4>
+          <p>Nexus-Flow assesses a 2.50% platform fee on settled transactions. Supplier payouts are held in delayed escrow status until carrier tracking confirmation or 72 hours post-delivery.</p>
+        </section>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" onclick="closeTermsModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Toast Notification -->
+  <div id="copy-toast" class="copy-toast">Copied to clipboard!</div>
+
+  <!-- Scripts -->
+  <script src="/static/js/background.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

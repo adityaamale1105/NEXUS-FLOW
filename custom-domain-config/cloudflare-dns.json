@@ -1,0 +1,37 @@
+{
+  "zone_name": "nexusflow.network",
+  "records": [
+    {
+      "type": "A",
+      "name": "nexusflow.network",
+      "content": "192.0.2.1",
+      "ttl": 1,
+      "proxied": true,
+      "comment": "Apex apex domain pointing to Nexus-Flow edge gateway"
+    },
+    {
+      "type": "CNAME",
+      "name": "www",
+      "content": "nexusflow.network",
+      "ttl": 1,
+      "proxied": true,
+      "comment": "Canonical www alias"
+    },
+    {
+      "type": "CNAME",
+      "name": "api",
+      "content": "nexusflow.network",
+      "ttl": 1,
+      "proxied": true,
+      "comment": "API routing subdomain"
+    },
+    {
+      "type": "TXT",
+      "name": "_paypal-commerce-verification",
+      "content": "paypal-verification-token-nexus-flow-2026-prod",
+      "ttl": 3600,
+      "proxied": false,
+      "comment": "PayPal Commerce Platform merchant domain ownership validation"
+    }
+  ]
+}
