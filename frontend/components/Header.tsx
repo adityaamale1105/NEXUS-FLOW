@@ -12,7 +12,7 @@ export const Header: React.FC = () => {
     { name: "Procurement Engine", href: "/" },
     { name: "Procurement History", href: "/#view-history" },
     { name: "Control Tower", href: "/control-tower" },
-    { name: "API Docs", href: "http://localhost:8000/api/docs", external: true },
+    { name: "API Docs", href: "/api/docs", external: true },
     { name: "Privacy", href: "/privacy" },
     { name: "Terms", href: "/terms" },
   ];

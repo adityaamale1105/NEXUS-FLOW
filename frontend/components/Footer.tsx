@@ -59,7 +59,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="http://localhost:8000/api/docs"
+                  href="/api/docs"
                   target="_blank"
                   rel="noreferrer"
                   className="text-textSecondary hover:text-sage transition-colors"
